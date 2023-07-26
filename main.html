@@ -10,12 +10,20 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			const h =-1;
-			const h2 = -1;
+			let h =-1;
+			let h2 = -1;
 
-			for (let num in arr) {
-				if(num>=h) h = num;
+			for (let i=0;i<arr.length;i++) {
+				let num = arr[i];
+				
+				if(num > h) {
+					h2=h;
+					h = num;
+				}
+				else if (num==h) h=num;
 				else if(num>=h2) h2=num;
+
+				// console.log(num,h,h2);
 			}
 
 			if(h===h2 || h2==-1) return  '-Infinfity';
@@ -29,9 +37,12 @@
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
+			
 			alert(secondHighest(arr));
 		}
 		Main();
+
+		
 	</script>
 
     <script type="text/javascript" src="./script.js">
