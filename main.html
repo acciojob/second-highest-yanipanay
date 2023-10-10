@@ -10,35 +10,33 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let h =Number. MIN_VALUE;
-			let h2 =Number. MIN_VALUE;
+			let h1 =Number.MIN_VALUE;
+			let h2=Number.MIN_VALUE;
 
 			for (let i=0;i<arr.length;i++) {
 				let num = arr[i];
 				
-				if(num > h) {
-					h2=h;
-					h = num;
+				if(num > h1) {
+					h2=h1;
+					h1 = num;
 				}
-				else if (num==h) h=num;
+				else if (num==h1) h1=num;
 				else if(num>=h2) h2=num;
-
-				// console.log(num,h,h2);
 			}
 
-			if(h===h2 || h2==-1) return  '-Infinity';
+			if(h1===h2 || h2==Number.MIN_VALUE) return  '-Infinity';
 			else return h2;
 		}
 
 		
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			// var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
+				// arr[i] = prompt("Enter element " + (i+1));
 			}
 			
-			alert(secondHighest(arr));
+			// alert(secondHighest(arr));
 		}
 		Main();
 
